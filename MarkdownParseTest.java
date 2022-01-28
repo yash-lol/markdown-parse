@@ -37,4 +37,12 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(contents);
         assertEquals("Test the links from firstline.md", List.of(), links);
     }
+
+    @Test
+    public void testSeparated() throws IOException {
+        Path fileName = Path.of("separated.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals("Test the links from separated.md", List.of("isValid"), links);
+    }
 }
