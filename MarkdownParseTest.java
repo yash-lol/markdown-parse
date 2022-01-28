@@ -30,11 +30,11 @@ public class MarkdownParseTest {
         assertEquals("Test the links from img.md", List.of(), links);
     }
 
-    // @Test
-    // public void testfirstLine() throws IOException {
-    // Path fileName = Path.of("firstline.md");
-    // String contents = Files.readString(fileName);
-    // ArrayList<String> links = MarkdownParse.getLinks(contents);
-    // assertEquals("Test the links from firstline.md", List.of(""), links);
-    // }
+    @Test
+    public void testfirstLine() throws IOException {
+        Path fileName = Path.of("firstline.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals("Test the links from firstline.md", List.of(), links);
+    }
 }
