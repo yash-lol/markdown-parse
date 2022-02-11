@@ -51,6 +51,6 @@ public class MarkdownParseTest {
         Path fileName = Path.of("ree.md");
         String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        assertEquals("Test the links from separated.md", List.of("ao"), links);
+        assertEquals("Test the links from ree.md", List.of("ao"), links);
     }
 }
