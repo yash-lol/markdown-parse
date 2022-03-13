@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TryCommonMark",
+            "request": "launch",
+            "mainClass": "TryCommonMark",
+            "projectName": "markdown-parse_a9391952"
+        },
+        {
+            "type": "java",
             "name": "Launch MarkdownParse1",
             "request": "launch",
             "mainClass": "MarkdownParse1",

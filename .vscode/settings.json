@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "C://JUnit/*.jar",
+        "lib/commonmark-0.18.2.jar"
+    ]
+}
