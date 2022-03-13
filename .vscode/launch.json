@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MarkdownParse1",
+            "request": "launch",
+            "mainClass": "MarkdownParse1",
+            "projectName": "markdown-parse_a9391952"
+        },
+        {
+            "type": "java",
             "name": "Launch with Arguments Prompt",
             "request": "launch",
             "mainClass": "MarkdownParse",

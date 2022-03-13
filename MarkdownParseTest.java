@@ -53,4 +53,67 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(contents);
         assertEquals("Test the links from ree.md", List.of("ao"), links);
     }
+
+    @Test
+    public void testsnip1() throws IOException {
+        Path fileName = Path.of("snip1.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> ourLinks = MarkdownParse.getLinks(contents);
+
+        assertEquals("Test the links from snip1.md for our method", List.of("`google.com", "google.com", "ucsd.edu"),
+                ourLinks);
+
+    }
+
+    public void testsnip1other() throws IOException {
+        Path fileName = Path.of("snip1.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> otherLinks = MarkdownParse.getLinksOther(contents);
+
+        assertEquals("Test the links from snip1.md for others method", List.of("`google.com", "google.com", "ucsd.edu"),
+                otherLinks);
+    }
+
+    @Test
+    public void testsnip2() throws IOException {
+        Path fileName = Path.of("snip2.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> ourLinks = MarkdownParse.getLinks(contents);
+
+        assertEquals("Test the links from snip2.md for our method", List.of("a.com", "a.com(())", "example.com"),
+                ourLinks);
+    }
+
+    @Test
+    public void testsnip2other() throws IOException {
+        Path fileName = Path.of("snip2.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> otherLinks = MarkdownParse.getLinksOther(contents);
+
+        assertEquals("Test the links from snip2.md for others method", List.of("a.com", "a.com(())", "example.com"),
+                otherLinks);
+    }
+
+    @Test
+    public void testsnip3() throws IOException {
+        Path fileName = Path.of("snip3.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> ourLinks = MarkdownParse.getLinks(contents);
+
+        assertEquals("Test the links from snip3.md for our method",
+                List.of(" https://www.twitter.com ", "https://ucsd-cse15l-w22.github.io/", "https://cse.ucsd.edu/"),
+                ourLinks);
+
+    }
+
+    @Test
+    public void testsnip3other() throws IOException {
+        Path fileName = Path.of("snip3.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> otherLinks = MarkdownParse.getLinksOther(contents);
+
+        assertEquals("Test the links from snip3.md for others method",
+                List.of(" https://www.twitter.com ", "https://ucsd-cse15l-w22.github.io/", "https://cse.ucsd.edu/"),
+                otherLinks);
+    }
 }
